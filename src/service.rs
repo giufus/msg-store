@@ -94,7 +94,7 @@ impl InMemoryStorage for StorageService {
             None => {
                 let id = self.get_next_id().await;
                 self.entries
-                    .write()
+                    .read()
                     .await
                     .get(&tenant_id)
                     .unwrap()
